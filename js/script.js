@@ -10,7 +10,6 @@ const navBar = document.querySelector('.navbar')
 
 // Sticky NavBar
 window.addEventListener('scroll', () => {
-  console.log(window.scrollY)
   navBar.classList.toggle('sticky', window.scrollY > 0)
 })
 

@@ -1,6 +1,7 @@
 .header {
-  grid-row: 1 / 2;
-  grid-column: full-start / full-end;
+  // grid-row: 1 / 2;
+  // grid-column: full-start / full-end;
+  grid-area: head;
   background: var(--color-primary-light-1);
   background-image: url(../img/image.jpg);
   background-size: cover;

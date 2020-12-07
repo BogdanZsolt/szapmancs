@@ -1,7 +1,7 @@
 .exploded {
-  grid-row: 6 / 7;
-  grid-column: full-start / full-end;
-
+  // grid-row: 6 / 7;
+  // grid-column: full-start / full-end;
+  grid-area: expl;
   background-image: url(../img/exploded-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;

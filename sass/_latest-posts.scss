@@ -1,7 +1,8 @@
 .latest-posts {
   background-color: var(--color-white);
-  grid-row: 7 / 8;
-  grid-column: center-start / center-end;
+  // grid-row: 7 / 8;
+  // grid-column: center-start / center-end;
+  grid-area: post;
 
   display: grid;
   grid-template-rows: auto;
@@ -29,24 +30,24 @@
 .post {
   text-decoration: none;
   overflow: hidden;
-  
+
   &:hover > * {
     color: var(--color-secondary);
   }
-  
+
   &:hover > &__img {
     // opacity: 0.75;
     transform: scale(1.05);
     overflow: hidden;
   }
-  
+
   &__img {
     width: 100%;
     object-fit: cover;
     display: block;
     margin-bottom: 2rem;
     border-radius: 3%;
-    transition: all .3s;
+    transition: all 0.3s;
   }
 
   &__title {

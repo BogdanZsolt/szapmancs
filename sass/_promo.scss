@@ -2,8 +2,9 @@
   background-color: var(--color-secondary-light-1);
   border-radius: 2%;
   overflow: hidden;
-  grid-row: 3 / 4;
-  grid-column: col-start 2 / col-end 9;
+  // grid-row: 3 / 4;
+  // grid-column: col-start 2 / col-end 9;
+  grid-area: prom;
 
   display: grid;
   grid-template-columns: 2fr 1fr;

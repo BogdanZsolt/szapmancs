@@ -75,8 +75,9 @@ body {
 .container {
   position: relative;
   display: grid;
-  grid-template-rows: 100vh 1fr min-content 50vh max-content min-content 1fr min-content;
-  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(10, [col-start] minmax(12rem, min-content) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
+  grid-template-rows: 100vh 1fr min-content 50vh max-content 1fr min-content min-content;
+  grid-template-columns: [full-start] 1fr [center-start] repeat(10, [col-start] minmax(12rem, min-content) [col-end]) [center-end] 1fr [full-end];
+  grid-template-areas: 'head head head head head head head head head head head head' '  .  prod prod prod prod prod prod prod prod prod prod  .' '  .  prom prom prom prom prom prom prom prom prom prom  .' '  .  fwar fwar fwar fwar fwar fwar fwar fwar fwar fwar  .' '  .  feat feat feat feat feat feat feat feat feat feat  .' '  .  post post post post post post post post post post  .' 'expl expl expl expl expl expl expl expl expl expl expl expl ' 'foot foot foot foot foot foot foot foot foot foot foot foot'; }
 
 @keyframes moveInBottom {
   0% {
@@ -299,8 +300,7 @@ h6 {
     transform: rotate(-45deg) translate(-3.5rem, -3.5rem); }
 
 .header {
-  grid-row: 1 / 2;
-  grid-column: full-start / full-end;
+  grid-area: head;
   background: var(--color-primary-light-1);
   background-image: url(../img/image.jpg);
   background-size: cover;
@@ -530,14 +530,13 @@ h6 {
   margin-right: auto; }
 
 .products {
-  grid-row: 2 / 3;
-  grid-column: center-start / center-end;
+  grid-area: prod;
   background-color: var(--color-white);
   margin-top: 8rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 5rem;
-  transition: all .4s; }
+  transition: all 0.4s; }
   .products__btn {
     grid-column: 1 / -1;
     justify-self: center;
@@ -545,7 +544,7 @@ h6 {
 
 .cart {
   display: grid;
-  transition: all .4s;
+  transition: all 0.4s;
   grid-gap: 2rem;
   cursor: pointer;
   border-radius: 3%;
@@ -561,7 +560,7 @@ h6 {
     color: var(--color-grey-dark-3);
     display: block;
     position: relative;
-    transition: opacity .4s; }
+    transition: opacity 0.4s; }
     .cart__wrapper--img, .cart__wrapper--img-2 {
       width: 100%;
       object-fit: cover;
@@ -575,7 +574,7 @@ h6 {
       top: 0;
       left: 0;
       opacity: 0;
-      transition: opacity .4s; }
+      transition: opacity 0.4s; }
     .cart__wrapper--name {
       font-family: var(--font-primary);
       margin: 2rem;
@@ -615,8 +614,7 @@ h6 {
   background-color: var(--color-secondary-light-1);
   border-radius: 2%;
   overflow: hidden;
-  grid-row: 3 / 4;
-  grid-column: col-start 2 / col-end 9;
+  grid-area: prom;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 3rem; }
@@ -644,32 +642,34 @@ h6 {
 .full-width {
   background-color: var(--color-grey-light-1);
   padding: 5rem;
-  grid-row: 4 / 5;
-  grid-column: full-start / full-end;
+  grid-area: fwar;
   background-image: url(../img/full-width-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding-left: 15rem;
-  display: grid;
-  grid-row: auto;
-  grid-row-gap: 2.5rem;
-  justify-content: start;
-  align-content: center; }
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  justify-content: center;
+  align-content: center;
+  align-items: flex-start; }
   .full-width__title {
     color: var(--color-black-2);
     font-family: var(--font-display);
     font-weight: 400;
     line-height: 1.5;
-    font-size: 3rem; }
+    font-size: 3rem;
+    margin: 1rem 0; }
   .full-width__content {
     color: var(--color-grey-dark-3);
     font-family: var(--font-primary);
     font-weight: 300;
     line-height: 1.5;
-    font-size: 1.8rem; }
+    font-size: 1.8rem;
+    margin: 1rem 0; }
   .full-width__btn {
-    justify-self: start; }
+    margin: 1rem 0; }
 
 .features {
   grid-row: 5 / 6;
@@ -834,8 +834,7 @@ h6 {
     stroke-dashoffset: 0; } }
 
 .exploded {
-  grid-row: 6 / 7;
-  grid-column: full-start / full-end;
+  grid-area: expl;
   background-image: url(../img/exploded-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -932,8 +931,7 @@ h6 {
 
 .latest-posts {
   background-color: var(--color-white);
-  grid-row: 7 / 8;
-  grid-column: center-start / center-end;
+  grid-area: post;
   display: grid;
   grid-template-rows: auto; }
 
@@ -968,7 +966,7 @@ h6 {
     display: block;
     margin-bottom: 2rem;
     border-radius: 3%;
-    transition: all .3s; }
+    transition: all 0.3s; }
   .post__title {
     font-family: var(--font-display);
     font-size: 2rem;
@@ -987,8 +985,7 @@ h6 {
   background-color: var(--color-secondary-light-1);
   border-top: 2px solid var(--color-secondary-light-2);
   padding: 5rem;
-  grid-row: 8 / -1;
-  grid-column: full-start / full-end;
+  grid-area: foot;
   padding: 4rem;
   display: grid;
   grid-auto-rows: auto;

@@ -91,11 +91,21 @@ body {
 .container {
   position: relative;
   display: grid;
-  grid-template-rows: 100vh 1fr min-content 50vh max-content min-content 1fr min-content;
+  grid-template-rows: 100vh 1fr min-content 50vh max-content 1fr min-content min-content;
   grid-template-columns:
-    [ full-start] minmax(6rem, 1fr) [center-start] repeat(
+    [ full-start] 1fr [center-start] repeat(
       10,
       [col-start] minmax(12rem, min-content) [col-end]
     )
-    [center-end] minmax(6rem, 1fr) [full-end];
+    [center-end] 1fr [full-end];
+
+  grid-template-areas:
+    'head head head head head head head head head head head head'
+    '  .  prod prod prod prod prod prod prod prod prod prod  .'
+    '  .  prom prom prom prom prom prom prom prom prom prom  .'
+    '  .  fwar fwar fwar fwar fwar fwar fwar fwar fwar fwar  .'
+    '  .  feat feat feat feat feat feat feat feat feat feat  .'
+    '  .  post post post post post post post post post post  .'
+    'expl expl expl expl expl expl expl expl expl expl expl expl '
+    'foot foot foot foot foot foot foot foot foot foot foot foot';
 }
