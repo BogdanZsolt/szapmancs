@@ -1,0 +1,27 @@
+{
+  "name": "szapmancs",
+  "version": "1.0.0",
+  "description": "SzapMancs - Hungarian Clean Beauty",
+  "main": "index.js",
+  "browserslist": "last 10 versions",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server --browser=google-chrome-stable",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss css/style.comp.css --use autoprefixer -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "Zsolt",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.0.2",
+    "concat": "^1.0.3",
+    "live-server": "^1.2.1",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.9",
+    "postcss-cli": "^8.3.0"
+  }
+}

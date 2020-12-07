@@ -1,0 +1,249 @@
+.features {
+  grid-row: 5 / 6;
+  grid-column: center-start / center-end;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 5rem;
+  // margin-bottom: 30rem;
+}
+
+.feature__btn {
+  display: grid;
+  // grid-template-rows: 1fr max-content;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  border-radius: 3%;
+  text-decoration: none;
+  transition: all 0.2s;
+
+  &--1,
+  &--2,
+  &--3,
+  &--4 {
+    transition: all 0.4s;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 1rem 2rem var(--color-shadow);
+    }
+  }
+
+  &--1 {
+    background: url(../img/feature-texture-01.jpg);
+  }
+
+  &--1:hover &--icon.lotus path {
+    animation: animate-lotus-hover 0.5s linear forwards;
+  }
+
+  &--2 {
+    background: url(../img/feature-texture-02.jpg);
+  }
+
+  &--2:hover &--icon.batch path {
+    animation: animate-batch-hover 0.5s linear forwards;
+  }
+
+  &--3 {
+    background: url(../img/feature-texture-03.jpg);
+  }
+
+  &--3:hover &--icon.beauty path {
+    animation: animate-beauty-hover 0.5s linear forwards;
+  }
+
+  &--4 {
+    background: url(../img/feature-texture-04.jpg);
+  }
+
+  &--4:hover &--icon.trusted path {
+    animation: animate-trusted-hover 0.5s linear forwards;
+  }
+
+  &--icon {
+    display: block;
+    grid-row: 1 / 2;
+    width: 15rem;
+    height: 15rem;
+    padding: 2rem;
+    margin: 5rem;
+    border: 1px solid var(--color-primary-light-1);
+    border-radius: 10rem;
+    align-self: center;
+    justify-self: center;
+
+    & path {
+      fill: transparent;
+      stroke-width: 3;
+      stroke: var(--color-primary-light-1);
+    }
+
+    &.lotus path {
+      stroke-dasharray: 156;
+      stroke-dashoffset: 0;
+      animation: animate-lotus 2s linear forwards;
+    }
+
+    &.batch path {
+      stroke-dasharray: 97;
+      stroke-dashoffset: 0;
+      animation: animate-batch 2s linear forwards;
+    }
+
+    &.beauty path {
+      stroke-dasharray: 236;
+      stroke-dashoffset: 0;
+      animation: animate-beauty 2s linear forwards;
+    }
+
+    &.trusted path {
+      stroke-dasharray: 179;
+      stroke-dashoffset: 0;
+      animation: animate-trusted 2s linear forwards;
+    }
+
+    // &.trusted:hover path {
+    //   animation: animate-trusted-hover .5s linear forwards;
+    // }
+  }
+
+  &--title {
+    padding: 2rem;
+    grid-row: 2 / 3;
+    display: inline-block;
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    line-height: normal;
+    font-weight: 600;
+    color: var(--color-secondary-light-0);
+    transition: all 0.4s;
+  }
+
+  &:hover &--title {
+    color: var(--color-secondary-light-1);
+    font-style: italic;
+  }
+}
+
+@keyframes animate-lotus {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 156;
+  }
+  80% {
+    stroke-dashoffset: 312;
+  }
+  100% {
+    stroke-dashoffset: 312;
+  }
+}
+
+@keyframes animate-lotus-hover {
+  0% {
+    stroke-dashoffset: 156;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-batch {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 97;
+  }
+  80% {
+    stroke-dashoffset: 194;
+  }
+  100% {
+    stroke-dashoffset: 194;
+  }
+}
+
+@keyframes animate-batch-hover {
+  0% {
+    stroke-dashoffset: 97;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-batch {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 97;
+  }
+  80% {
+    stroke-dashoffset: 194;
+  }
+  100% {
+    stroke-dashoffset: 194;
+  }
+}
+
+@keyframes animate-batch-hover {
+  0% {
+    stroke-dashoffset: 97;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-beauty {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 236;
+  }
+  80% {
+    stroke-dashoffset: 472;
+  }
+  100% {
+    stroke-dashoffset: 472;
+  }
+}
+
+@keyframes animate-beauty-hover {
+  0% {
+    stroke-dashoffset: 236;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-trusted {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 179;
+  }
+  80% {
+    stroke-dashoffset: 358;
+  }
+  100% {
+    stroke-dashoffset: 358;
+  }
+}
+
+@keyframes animate-trusted-hover {
+  0% {
+    stroke-dashoffset: 179;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

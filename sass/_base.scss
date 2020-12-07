@@ -1,0 +1,101 @@
+:root {
+  // COLOR VARIABLES
+
+  --color-primary: #e4b192; /* Main Primary color*/
+  --color-primary-light-1: #ffeee4;
+  --color-primary-light-2: #ffdbc6;
+  --color-primary-dark-1: #be815c;
+  --color-primary-dark-2: #9c5b35;
+
+  --color-secondary: #d68997; /* Main Secondary color */
+  --color-secondary-light-0: #faeef1;
+  --color-secondary-light-1: #f8dde2;
+  --color-secondary-light-2: #f1bbc5;
+  --color-secondary-dark-1: #b25767;
+  --color-secondary-dark-2: #923243;
+
+  --color-white: #ffffff;
+  --color-white-1: #f9f9f9;
+  --color-white-opc-1: #f9f9f9f2;
+
+  --color-black: #000000;
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-black-2: #2b2a2a;
+  --color-black-3: #3c3c3c;
+
+  --color-grey-light-1: #f9f7f6; /* Main Light Grey color */
+  --color-grey-light-2: #e2eef6;
+  --color-grey-light-3: #d6c7ce;
+
+  --color-grey-dark-1: #7b7b7b; /* Main Dark Grey color */
+  --color-grey-dark-2: #6d6d6d;
+  --color-grey-dark-3: #444444;
+
+  --color-feature-light-1: #f8f8f9;
+  --color-feature-light-2: #f9f8f5;
+  --color-feature-light-3: #f5f8f6;
+  --color-feature-light-4: #f5f2f4;
+
+  --color-feature-dark-1: #eaeaed;
+  --color-feature-dark-2: #efede5;
+  --color-feature-dark-3: #e6eee9;
+  --color-feature-dark-4: #eae4e8;
+
+  --color-feature-black-1: #575757;
+
+  --color-action: #f45404; /* Main Action color */
+  --color-action-dark: #b74005;
+
+  // FONT VARIABLES
+  --font-primary: 'Roboto', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-handwrite: 'Monsieur La Doulaise', cursive;
+  --font-atomic: 'Atomic Age', cursive;
+
+  // MEDIA BREAK POINTS
+}
+
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+*::selection {
+  background-color: var(--color-grey-dark-3);
+  color: var(--color-grey-light-1);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-grey-dark-2);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-rows: 100vh 1fr min-content 50vh max-content min-content 1fr min-content;
+  grid-template-columns:
+    [ full-start] minmax(6rem, 1fr) [center-start] repeat(
+      10,
+      [col-start] minmax(12rem, min-content) [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end];
+}

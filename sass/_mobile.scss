@@ -1,0 +1,66 @@
+.menu-btn {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  border: 2px solid var(--color-secondary-dark-2);
+  border-radius: 1.5rem;
+
+  @media only screen and (max-width: $bp-large) {
+    position: relative;
+    margin-right: auto;
+    display: flex;
+  }
+
+  &__lines {
+    width: 2rem;
+    height: 0.3rem;
+    background: var(--color-secondary-dark-2);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2rem 0.5rem rgba(255, 101, 47, 0.2);
+    transition: all 0.5s ease-in-out;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 2rem;
+      height: 0.3rem;
+      background: var(--color-secondary-dark-2);
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2);
+      transition: all 0.5s ease-in-out;
+    }
+
+    &::before {
+      transform: translateY(-0.8rem);
+    }
+
+    &::after {
+      transform: translateY(0.8rem);
+    }
+  }
+
+  &.open {
+    border: 0;
+    left: 0;
+  }
+
+  &.open &__lines {
+    transform: translateX(5rem);
+    background: transparent;
+    box-shadow: none;
+  }
+
+  &.open &__lines::before {
+    transform: rotate(45deg) translate(-3.5rem, 3.5rem);
+  }
+
+  &.open &__lines::after {
+    transform: rotate(-45deg) translate(-3.5rem, -3.5rem);
+  }
+}
