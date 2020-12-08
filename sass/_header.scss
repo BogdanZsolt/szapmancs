@@ -1,22 +1,21 @@
 .header {
-  // grid-row: 1 / 2;
-  // grid-column: full-start / full-end;
   grid-area: head;
   background: var(--color-primary-light-1);
   background-image: url(../img/image.jpg);
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
 
   display: grid;
-  grid-template-rows: 8rem 1fr max-content min-content 1fr;
-  grid-template-columns: 1fr 1.5fr repeat(4, 1fr);
+  grid-template-rows: 8rem 1fr minmax(min-content, max-content) min-content 1fr;
+  grid-template-columns: repeat(6, 1fr);
   grid-template-areas:
     'navbar navbar navbar navbar navbar navbar'
-    ' .       .      .      .      .      .   '
-    ' .      h1      .      .      .      .   '
-    ' .       a      .      .      .      .   '
-    ' .       .      .      .      .      .   ';
+    '  .      .      .      .      .      .   '
+    '  .      h1     .      .      .      .   '
+    '  .      a      .      .      .      .   '
+    '  .      .      .      .      .      .   ';
 
   justify-content: center;
   justify-items: start;
@@ -27,7 +26,12 @@
     text-transform: capitalize;
     margin-bottom: 2rem;
     color: var(--color-white);
+
+    @media only screen and (max-width: $bp-large) {
+      font-size: 2.5rem;
+    }
   }
+
   & a {
     grid-area: a;
     align-self: start;
@@ -229,7 +233,7 @@
     width: 15rem;
     height: 15rem;
     overflow: hidden;
-    border-radius: 3%;
+    border-radius: 5%;
 
     & img {
       transition: all 0.4s ease-in-out;

@@ -58,6 +58,7 @@
 $bp-largest: 75em; // 1200px
 $bp-large: 62.5em; // 1000px
 $bp-medium: 50em; // 800px
+$bp-small: 37.5em; // 600px
 
 *,
 *::before,
@@ -91,11 +92,11 @@ body {
 .container {
   position: relative;
   display: grid;
-  grid-template-rows: 100vh 1fr min-content 50vh max-content 1fr min-content min-content;
+  grid-template-rows: 100vh 1fr repeat(6, minmax(min-content, max-content));
   grid-template-columns:
     [ full-start] 1fr [center-start] repeat(
       10,
-      [col-start] minmax(12rem, min-content) [col-end]
+      [col-start] minmax(min-content, 12rem) [col-end]
     )
     [center-end] 1fr [full-end];
 

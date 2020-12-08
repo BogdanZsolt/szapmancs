@@ -1,9 +1,7 @@
 .products {
-  // grid-row: 2 / 3;
-  // grid-column: center-start / center-end;
   grid-area: prod;
   background-color: var(--color-white);
-  // padding: 2rem;
+  padding: 2rem;
   margin-top: 8rem;
 
   display: grid;

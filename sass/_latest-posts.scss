@@ -1,22 +1,24 @@
 .latest-posts {
   background-color: var(--color-white);
-  // grid-row: 7 / 8;
-  // grid-column: center-start / center-end;
   grid-area: post;
 
-  display: grid;
-  grid-template-rows: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // grid-template-rows: auto;
 }
 
 .title {
-  justify-self: center;
-  align-self: center;
   font-family: var(--font-primary);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.8rem;
   line-height: normal;
   font-size: 1.2rem;
+  margin-bottom: 2rem;
   color: var(--color-black-3);
 }
 
@@ -36,7 +38,6 @@
   }
 
   &:hover > &__img {
-    // opacity: 0.75;
     transform: scale(1.05);
     overflow: hidden;
   }
@@ -51,8 +52,10 @@
   }
 
   &__title {
+    text-align: center;
     font-family: var(--font-display);
     font-size: 2rem;
+    align-self: center;
     color: var(--color-secondary-dark-2);
     font-weight: 500;
     line-height: normal;
