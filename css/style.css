@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+@import url("../img/Marhaban-Regular.otf");
 :root {
   --color-primary: #e4b192;
   /* Main Primary color*/
@@ -47,7 +48,7 @@
   --color-action-dark: #b74005;
   --font-primary: 'Roboto', sans-serif;
   --font-display: 'Playfair Display', serif;
-  --font-handwrite: 'Monsieur La Doulaise', cursive;
+  --font-handwrite: MarhabanRegural;
   --font-atomic: 'Atomic Age', cursive; }
 
 *,
@@ -80,6 +81,10 @@ body {
   grid-template-rows: 100vh 1fr repeat(6, minmax(min-content, max-content));
   grid-template-columns: [full-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content, 12rem) [col-end]) [center-end] 1fr [full-end];
   grid-template-areas: 'head head head head head head head head head head head head' '  .  prod prod prod prod prod prod prod prod prod prod  .' '  .  prom prom prom prom prom prom prom prom prom prom  .' '  .  fwar fwar fwar fwar fwar fwar fwar fwar fwar fwar  .' '  .  feat feat feat feat feat feat feat feat feat feat  .' '  .  post post post post post post post post post post  .' 'expl expl expl expl expl expl expl expl expl expl expl expl ' 'foot foot foot foot foot foot foot foot foot foot foot foot'; }
+
+@font-face {
+  font-family: MarhabanRegural;
+  src: url(../font/Marhaban-Regular.otf); }
 
 @keyframes moveInBottom {
   0% {
@@ -414,9 +419,9 @@ h6 {
       padding-bottom: 3rem; }
       @media only screen and (max-width: 62.5em) {
         .navbar__items li {
-          font-family: var(--font-display);
           font-size: 2.5rem;
-          font-weight: 700;
+          font-weight: 500;
+          line-height: 1.5;
           text-transform: uppercase; } }
   .navbar__item {
     position: relative;
@@ -456,7 +461,13 @@ h6 {
         .mega:hover .navbar__item::after {
           display: none; } }
   .navbar__icon {
+    width: 1.5rem;
+    height: 1.5rem;
     fill: var(--color-secondary-dark-2); }
+    @media only screen and (max-width: 62.5em) {
+      .navbar__icon {
+        width: 3rem;
+        height: 3rem; } }
 
 .mega__content {
   list-style: none;

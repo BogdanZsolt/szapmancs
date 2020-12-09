@@ -51,7 +51,8 @@
   // FONT VARIABLES
   --font-primary: 'Roboto', sans-serif;
   --font-display: 'Playfair Display', serif;
-  --font-handwrite: 'Monsieur La Doulaise', cursive;
+  --font-handwrite: MarhabanRegural;
+  // --font-handwrite: 'Monsieur La Doulaise', cursive;
   --font-atomic: 'Atomic Age', cursive;
 
   // MEDIA BREAK POINTS
@@ -111,4 +112,9 @@ body {
     '  .  post post post post post post post post post post  .'
     'expl expl expl expl expl expl expl expl expl expl expl expl '
     'foot foot foot foot foot foot foot foot foot foot foot foot';
+}
+
+@font-face {
+  font-family: MarhabanRegural;
+  src: url(../font/Marhaban-Regular.otf);
 }

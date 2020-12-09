@@ -100,7 +100,6 @@
       width: 100%;
       top: 17rem;
       left: 0;
-      // align-items: flex-start;
       padding: 1rem;
       line-height: 3rem;
       overflow-y: auto;
@@ -126,9 +125,9 @@
       padding-bottom: 3rem;
 
       @media only screen and (max-width: $bp-large) {
-        font-family: var(--font-display);
         font-size: 2.5rem;
-        font-weight: 700;
+        font-weight: 500;
+        line-height: 1.5;
         text-transform: uppercase;
       }
     }
@@ -187,7 +186,14 @@
   }
 
   &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
     fill: var(--color-secondary-dark-2);
+
+    @media only screen and (max-width: $bp-large) {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 }
 
