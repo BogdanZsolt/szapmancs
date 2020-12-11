@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
-@import url("../img/Marhaban-Regular.otf");
+@import url("../font/calibre/stylesheet.css");
 :root {
   --color-primary: #e4b192;
   /* Main Primary color*/
@@ -49,6 +49,7 @@
   --font-primary: 'Roboto', sans-serif;
   --font-display: 'Playfair Display', serif;
   --font-handwrite: MarhabanRegural;
+  --font-mobile: 'Calibre';
   --font-atomic: 'Atomic Age', cursive; }
 
 *,
@@ -343,7 +344,7 @@ h6 {
     color: var(--color-white); }
     @media only screen and (max-width: 62.5em) {
       .header h1 {
-        font-size: 2.5rem; } }
+        font-size: 3rem; } }
   .header a {
     grid-area: a;
     align-self: start; }
@@ -419,13 +420,17 @@ h6 {
       padding-bottom: 3rem; }
       @media only screen and (max-width: 62.5em) {
         .navbar__items li {
-          font-size: 2.5rem;
-          font-weight: 500;
+          font-family: 'Calibre';
+          font-weight: 900;
+          font-size: 3rem;
           line-height: 1.5;
           text-transform: uppercase; } }
   .navbar__item {
     position: relative;
     color: var(--color-secondary-dark-2); }
+    @media only screen and (max-width: 62.5em) {
+      .navbar__item {
+        color: var(--color-secondary); } }
     .navbar__item:hover {
       color: var(--color-primary-dark-2); }
     .navbar__item::before, .navbar__item::after {
@@ -467,7 +472,8 @@ h6 {
     @media only screen and (max-width: 62.5em) {
       .navbar__icon {
         width: 3rem;
-        height: 3rem; } }
+        height: 3rem;
+        fill: var(--color-secondary); } }
 
 .mega__content {
   list-style: none;

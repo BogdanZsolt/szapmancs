@@ -141,6 +141,10 @@
     position: relative;
     color: var(--color-secondary-dark-2);
 
+    @media only screen and (max-width: $bp-large) {
+      color: var(--color-secondary);
+    }
+
     &:hover {
       color: var(--color-primary-dark-2);
     }
@@ -197,6 +201,7 @@
     @media only screen and (max-width: $bp-large) {
       width: 3rem;
       height: 3rem;
+      fill: var(--color-secondary);
     }
   }
 }
