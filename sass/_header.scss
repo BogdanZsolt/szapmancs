@@ -28,7 +28,7 @@
     color: var(--color-white);
 
     @media only screen and (max-width: $bp-large) {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
 
@@ -125,8 +125,12 @@
       padding-bottom: 3rem;
 
       @media only screen and (max-width: $bp-large) {
-        font-size: 2.5rem;
-        font-weight: 500;
+        // font-size: 2.5rem;
+        // font-weight: 500;
+        // line-height: 1.5;
+        font-family: 'Calibre';
+        font-weight: 900;
+        font-size: 3rem;
         line-height: 1.5;
         text-transform: uppercase;
       }
