@@ -10,14 +10,14 @@
     [center-end] 1fr [full-end];
 
   grid-template-areas:
-    'oshd oshd oshd oshd oshd oshd oshd oshd oshd oshd oshd oshd'
+    'head head head head head head head head head head head head'
     ' .   osst osst osst osst osst osst osst osst osst osst   . '
     ' .   ospt ospt ospt ospt ospt ospt ospt ospt ospt ospt   . '
     ' .   osvd osvd osvd osvd osvd osvd osvd osvd osvd osvd   . '
-    'osft osft osft osft osft osft osft osft osft osft osft osft';
+    'foot foot foot foot foot foot foot foot foot foot foot foot';
 
   &__header {
-    grid-area: oshd;
+    grid-area: head;
     // background: var(--color-primary-light-1);
     background-color: transparent;
     background-image: url(https://picsum.photos/1920/540.jpg);
@@ -31,13 +31,13 @@
       font-family: var(--font-display);
       font-size: 5.6rem;
       background: transparent;
-      color: var(--color-secondary-light-1);
+      color: var(--color-secondary-dark-2);
       font-weight: 500;
     }
   }
 
   &__footer {
-    grid-area: osft;
+    grid-area: foot;
     background-color: var(--color-secondary-light-1);
     border-top: 2px solid var(--color-secondary-light-2);
     padding: 4rem;
