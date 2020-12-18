@@ -5,7 +5,7 @@
   grid-template-columns:
     [ full-start] 1fr [center-start] repeat(
       10,
-      [col-start] minmax(min-content, 12rem) [col-end]
+      [col-start] minmax(min-content, 15rem) [col-end]
     )
     [center-end] 1fr [full-end];
 
@@ -115,15 +115,23 @@
   &__feature {
     grid-area: ovft;
     margin-bottom: 4rem;
-    flex-direction: row;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 100%;
+      // flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
     &--title {
-      color: var(--color-secondary-dark-2);
+      color: var(--color-secondary-light-1);
       font-family: var(--font-display);
+      text-align: center;
+      padding: 1rem;
       margin-bottom: 1.5rem;
       font-weight: 600;
       line-height: 1.25;
@@ -131,21 +139,48 @@
     }
 
     &--txt {
-      color: var(--color-secondary-dark-2);
+      color: var(--color-secondary-light-1);
       font-family: var(--font-primary);
       font-weight: 400;
       line-height: 1.25;
       font-size: 1.4rem;
+      padding: 1rem;
+      text-align: justify;
     }
 
     &--1,
     &--2,
     &--3,
     &--4 {
-      width: 15vw;
+      width: 20%;
+      height: 100%;
+      margin: 2rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      @media only screen and (max-width: $bp-medium) {
+        width: 100%;
+        height: auto;
+        padding: 0 1rem;
+        margin: 1rem;
+      }
+    }
+
+    &--1 {
+      background: url(../img/feature-texture-01.jpg);
+    }
+
+    &--2 {
+      background: url(../img/feature-texture-02.jpg);
+    }
+
+    &--3 {
+      background: url(../img/feature-texture-03.jpg);
+    }
+
+    &--4 {
+      background: url(../img/feature-texture-04.jpg);
     }
   }
 
@@ -161,6 +196,7 @@
   }
 
   &__content {
+    width: 100%;
     margin: 4rem 0 2rem;
     grid-area: ovcn;
     // background: var(--color-primary-light-2);
@@ -188,6 +224,7 @@
       line-height: 1.25;
       color: var(--color-primary-dark-2);
       padding: 1rem;
+      text-align: justify;
     }
   }
 
@@ -195,7 +232,7 @@
     grid-area: ovpt;
     margin-bottom: 4rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     justify-items: center;
     flex-wrap: wrap;
 
