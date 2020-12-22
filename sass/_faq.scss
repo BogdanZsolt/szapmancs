@@ -1,0 +1,192 @@
+/* 
+https://www.w3schools.com/howto/howto_js_accordion.asp
+https://codepen.io/eksch/pen/xwdOeK 
+*/
+
+.faq {
+  position: relative;
+  display: grid;
+  grid-template-rows: 50vh minmax(min-content, max-content);
+  grid-template-columns:
+    [ full-start] 1fr [center-start] repeat(
+      10,
+      [col-start] minmax(min-content, 12rem) [col-end]
+    )
+    [center-end] 1fr [full-end];
+
+  grid-template-areas:
+    'head head head head head head head head head head head head'
+    '  .  fqsb fqsb fqct fqct fqct fqct fqct fqct fqct fqct   . '
+    'foot foot foot foot foot foot foot foot foot foot foot foot';
+
+  &__header {
+    grid-area: head;
+    // background: var(--color-primary-light-1);
+    background-color: transparent;
+    background-image: url(https://picsum.photos/1920/540.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--title {
+      font-family: var(--font-display);
+      font-size: 5.6rem;
+      background: transparent;
+      color: var(--color-secondary-dark-2);
+      font-weight: 500;
+    }
+  }
+
+  &__footer {
+    grid-area: foot;
+    background-color: var(--color-secondary-light-1);
+    border-top: 2px solid var(--color-secondary-light-2);
+    padding: 4rem;
+
+    display: grid;
+    grid-auto-rows: auto;
+    justify-content: center;
+  }
+
+  &__sidebar {
+    grid-area: fqsb;
+    position: relative;
+    margin-top: 3rem;
+    width: 100%;
+  }
+
+  &__navbar {
+    display: block;
+    width: 15%;
+    position: fixed;
+    list-style: none;
+    padding: 1rem;
+    z-index: 100;
+  }
+
+  &__nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
+    background: var(--color-secondary-light-0);
+    & li {
+      width: 100%;
+      padding: 0.5rem 1rem;
+    }
+
+    & a {
+      text-decoration: none;
+      font-family: var(--font-primary);
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 1.54;
+      color: var(--color-secondary-dark-2);
+    }
+
+    & li:not(:last-child) {
+      border: 1px solid var(--color-secondary-dark-2);
+      margin-bottom: 0.1rem;
+    }
+
+    & li:not(:first-child) {
+      margin-top: 0.1rem;
+    }
+
+    & li:last-child {
+      color: orangered;
+    }
+  }
+
+  &__container {
+    list-style: none;
+    grid-area: fqct;
+    display: block;
+    width: 100%;
+    background: var(--color-secondary-light-0);
+    padding: 0 2rem;
+    margin: 4rem;
+  }
+
+  &__theme {
+    list-style: none;
+
+    &--title {
+      display: inline-block;
+      font-size: 2.2rem;
+      font-weight: 300;
+      padding: 1.8rem 0;
+      color: var(--color-secondary-dark-2);
+      text-transform: uppercase;
+    }
+  }
+
+  &__accordion {
+    text-decoration: none;
+    display: inline-block;
+    color: var(--color-secondary-dark-2);
+    cursor: pointer;
+    padding: 1.8rem 0rem;
+    width: 100%;
+    font-size: 1.6rem;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+    border-bottom: 2px solid var(--color-secondary-light-1);
+
+    &:before {
+      content: '\02795';
+      font-size: 1.6rem;
+      color: var(--color-secondary-dark-2);
+      margin-left: 0.5rem;
+      float: left;
+      transition: all 0.4s;
+    }
+
+    &:hover {
+      transition: all 0.4s;
+    }
+
+    &:hover::before {
+      transform: rotate(180deg);
+    }
+
+    &.active {
+      border: none;
+    }
+
+    &.active:before {
+      content: '\02796';
+    }
+
+    &--content {
+      width: 100%;
+      opacity: 0;
+      display: none;
+      overflow: hidden;
+      transition: all 4s ease;
+
+      &.active {
+        display: block;
+        opacity: 1;
+        border-bottom: 2px solid var(--color-secondary-light-1);
+      }
+
+      & p {
+        padding: 0;
+        width: 100%;
+        background: var(--color-secondary-light-0);
+        color: var(--color-secondary-dark-2);
+        font-family: var(--font-primary);
+        font-size: 1.6rem;
+        font-weight: 400;
+      }
+    }
+  }
+}
