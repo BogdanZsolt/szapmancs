@@ -14,6 +14,7 @@ const sideBar = document.querySelector('.faq__navbar');
 const faqFooter = document.querySelector('.faq__footer');
 // const maxScroll = faqFooter.offsetTop - 30;
 const faqAccordion = document.querySelectorAll('.faq__accordion');
+var faqNavLinks = document.querySelectorAll('.faq__nav--link');
 
 // Sticky NavBar
 window.addEventListener('scroll', () => {
@@ -45,5 +46,15 @@ faqAccordion.forEach((panel) => {
   panel.addEventListener('click', () => {
     panel.classList.toggle('active');
     panel.nextElementSibling.classList.toggle('active');
+  });
+});
+
+faqNavLinks.forEach((links) => {
+  links.addEventListener('click', () => {
+    var activeLink = document.querySelectorAll('.active--link');
+    activeLink.forEach((alink) => {
+      alink.classList.remove('active--link');
+    });
+    links.classList.toggle('active--link');
   });
 });

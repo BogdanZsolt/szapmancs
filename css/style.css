@@ -167,6 +167,14 @@ body {
   100% {
     stroke-dashoffset: 0; } }
 
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); }
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -415,7 +423,7 @@ h6 {
 .header {
   grid-area: head;
   background: var(--color-primary-light-1);
-  background-image: url(../img/image.jpg);
+  background-image: linear-gradient(to bottom, rgba(214, 137, 151, 0.01) 0%, rgba(248, 221, 226, 0.12) 75%, white 100%), url(../img/image.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -1578,6 +1586,7 @@ https://codepen.io/eksch/pen/xwdOeK
     padding: 1rem;
     z-index: 100; }
   .faq__nav {
+    width: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -1590,6 +1599,7 @@ https://codepen.io/eksch/pen/xwdOeK
       width: 100%;
       padding: 0.5rem 1rem; }
     .faq__nav a {
+      width: 100%;
       text-decoration: none;
       font-family: var(--font-primary);
       font-size: 1.3rem;
@@ -1603,6 +1613,9 @@ https://codepen.io/eksch/pen/xwdOeK
       margin-top: 0.1rem; }
     .faq__nav li:last-child {
       color: orangered; }
+    .faq__nav--link.active--link {
+      width: 100%;
+      background: var(--color-secondary-light-2); }
   .faq__container {
     list-style: none;
     grid-area: fqct;
@@ -1646,17 +1659,18 @@ https://codepen.io/eksch/pen/xwdOeK
       transform: rotate(180deg); }
     .faq__accordion.active {
       border: none; }
+    .faq__accordion.active:hover::before {
+      transform: rotate(0deg); }
     .faq__accordion.active:before {
       content: '\02796'; }
     .faq__accordion--content {
       width: 100%;
-      opacity: 0;
       display: none;
       overflow: hidden;
       transition: all 4s ease; }
       .faq__accordion--content.active {
         display: block;
-        opacity: 1;
+        animation: moveDown 0.5s ease-in-out;
         border-bottom: 2px solid var(--color-secondary-light-1); }
       .faq__accordion--content p {
         padding: 0;

@@ -1,7 +1,13 @@
 .header {
   grid-area: head;
   background: var(--color-primary-light-1);
-  background-image: url(../img/image.jpg);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(214, 137, 151, 0.01) 0%,
+      rgba(248, 221, 226, 0.12) 75%,
+      rgba(255, 2255, 255, 1) 100%
+    ),
+    url(../img/image.jpg);
   // background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
