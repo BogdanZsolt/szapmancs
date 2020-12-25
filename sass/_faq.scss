@@ -1,7 +1,10 @@
 /* 
 https://www.w3schools.com/howto/howto_js_accordion.asp
-https://codepen.io/eksch/pen/xwdOeK 
+https://codepen.io/eksch/pen/xwdOeK
+https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/ 
 */
+
+// page navbar footer setup
 
 .faq {
   position: relative;
@@ -16,14 +19,20 @@ https://codepen.io/eksch/pen/xwdOeK
 
   grid-template-areas:
     'head head head head head head head head head head head head'
-    '  .  fqsb fqsb fqct fqct fqct fqct fqct fqct fqct fqct   . '
+    '  .  fqct fqct fqct fqct fqct fqct fqct fqct fqct fqct   . '
     'foot foot foot foot foot foot foot foot foot foot foot foot';
 
   &__header {
     grid-area: head;
     // background: var(--color-primary-light-1);
     background-color: transparent;
-    background-image: url(https://picsum.photos/1920/540.jpg);
+    background-image: linear-gradient(
+        to bottom,
+        rgba(214, 137, 151, 0.01) 0%,
+        rgba(248, 221, 226, 0.12) 65%,
+        rgba(255, 2255, 255, 1) 100%
+      ),
+      url(https://picsum.photos/1920/540.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -48,13 +57,6 @@ https://codepen.io/eksch/pen/xwdOeK
     display: grid;
     grid-auto-rows: auto;
     justify-content: center;
-  }
-
-  &__sidebar {
-    grid-area: fqsb;
-    position: relative;
-    margin-top: 3rem;
-    width: 100%;
   }
 
   &__navbar {
@@ -110,77 +112,135 @@ https://codepen.io/eksch/pen/xwdOeK
     }
   }
 
-  &__container {
-    list-style: none;
-    grid-area: fqct;
-    display: block;
-    width: 100%;
-    background: var(--color-secondary-light-0);
-    padding: 0 2rem;
-    margin: 4rem;
+  // Accordion sidebar sessions scroll
+
+  * {
+    box-sizing: border-box;
   }
 
-  &__theme {
+  html {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+  }
+
+  &__main {
+    grid-area: fqct;
+    display: grid;
+    grid-template-columns: 24rem 1fr;
+    max-width: 160rem;
+    width: 90%;
+    margin: 4rem auto;
+
+    & > nav {
+      position: sticky;
+      top: 50vh;
+      align-self: flex-start;
+    }
+  }
+
+  .section-nav {
+    padding-right: 0;
+  }
+
+  &__sidebar {
     list-style: none;
 
-    &--title {
-      display: inline-block;
-      font-size: 2.2rem;
-      font-weight: 300;
-      padding: 1.8rem 0;
+    & li {
+      font-family: var(--font-primary);
+      font-size: 1.3rem;
+      font-weight: 400;
+      line-height: 1.54;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-secondary-dark-2);
+
+      &.active > a {
+        color: var(--color-secondary-dark-2);
+        background: var(--color-secondary-light-0);
+        font-weight: 700;
+      }
+    }
+
+    & a {
+      padding: 0.5rem 1rem;
+      text-decoration: none;
       color: var(--color-secondary-dark-2);
-      text-transform: uppercase;
+      display: block;
+      padding: 2 0;
+      justify-self: stretch;
+    }
+
+    & a:hover,
+    & a:focus {
+      background: var(--color-secondary-light-2);
+    }
+  }
+
+  &__container {
+    & section {
+      margin-left: 4rem;
+    }
+
+    & section:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+
+    & h4 {
+      font-family: var(--font-primary);
+      font-size: 2.2rem;
+      line-height: 1.25;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: var(--color-secondary-dark-2);
     }
   }
 
   &__accordion {
-    text-decoration: none;
-    display: inline-block;
-    color: var(--color-secondary-dark-2);
-    cursor: pointer;
-    padding: 1.8rem 0rem;
-    width: 100%;
-    font-size: 1.6rem;
-    font-family: var(--font-primary);
-    font-weight: 700;
-    line-height: 1.5;
-    text-align: left;
-    border-bottom: 2px solid var(--color-secondary-light-1);
+    list-style: none;
 
-    &:before {
-      content: '\02795';
+    & li {
+      padding: 1.5rem 0;
+      display: block;
+      width: 100%;
+      border-bottom: 1px solid var(--color-secondary-light-2);
+    }
+    &--question {
       font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.5;
+      width: 100%;
       color: var(--color-secondary-dark-2);
-      margin-left: 0.5rem;
-      float: left;
-      transition: all 0.4s;
+
+      &:before {
+        // content: '\02795';
+        font-family: 'Font Awesome 5 Free';
+        content: '\f067';
+        color: var(--color-secondary-dark-2);
+        margin-right: 0.5rem;
+        float: left;
+        transition: all 0.4s ease-in-out;
+      }
+
+      &:hover::before {
+        transform: rotate(180deg);
+      }
+
+      &.active {
+        transform: rotate(180deg);
+      }
+
+      &.active:before {
+        content: '\f068';
+      }
+
+      &.active:hover::before {
+        transform: rotate(0);
+      }
     }
 
-    &:hover {
-      transition: all 0.4s;
-    }
-
-    &:hover::before {
-      transform: rotate(180deg);
-    }
-
-    &.active {
-      border: none;
-    }
-
-    &.active:hover::before {
-      transform: rotate(0deg);
-    }
-
-    &.active:before {
-      content: '\02796';
-    }
-
-    &--content {
+    &--answer {
       width: 100%;
       display: none;
       overflow: hidden;
-      transition: all 4s ease;
 
       &.active {
         display: block;

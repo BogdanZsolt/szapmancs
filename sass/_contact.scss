@@ -1,7 +1,7 @@
-.ourfounder {
+.contact {
   position: relative;
   display: grid;
-  grid-template-rows: 50vh repeat(4, minmax(min-content, max-content));
+  grid-template-rows: 50vh repeat(3, minmax(min-content, max-content));
   grid-template-columns:
     [ full-start] 1fr [center-start] repeat(
       10,
@@ -11,14 +11,11 @@
 
   grid-template-areas:
     'head head head head head head head head head head head head'
-    ' .   ofst ofst ofst ofst ofst ofst ofst ofst ofst ofst   . '
-    ' .   ofpt ofpt ofpt ofpt ofpt ofpt ofpt ofpt ofpt ofpt   . '
-    ' .   ofvd ofvd ofvd ofvd ofvd ofvd ofvd ofvd ofvd ofvd   . '
+    '  .  cont cont cont cont cont cont cont cont cont cont  .  '
     'foot foot foot foot foot foot foot foot foot foot foot foot';
 
   &__header {
     grid-area: head;
-    // background: var(--color-primary-light-1);
     background-color: transparent;
     background-image: linear-gradient(
         to bottom,
@@ -54,56 +51,31 @@
   }
 
   &__content {
-    margin: 4rem 0 2rem;
-    grid-area: ofst;
-    background: var(--color-primary-light-2);
-
-    &--txt {
-      font-family: var(--font-primary);
-      font-size: 1.5rem;
-      font-weight: 400;
-      line-height: 1.25;
-      color: var(--color-primary-dark-2);
-      padding: 1rem;
-    }
-  }
-
-  &__photo {
-    grid-area: ofpt;
-    margin-bottom: 4rem;
-    display: flex;
-    justify-content: space-between;
-    justify-items: center;
-    flex-wrap: wrap;
-
-    &--img {
-      width: 35rem;
-      margin: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 1rem 2rem var(--color-shadow);
-    }
-  }
-
-  &__video {
-    grid-area: ofvd;
-    margin-bottom: 4rem;
-    position: relative;
-    box-shadow: 0 1rem 2rem var(--color-shadow);
+    grid-area: cont;
+    margin: 4rem 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 56.25%;
+  }
 
-    &--iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
+  &__platforms,
+  &__enqiries {
+    background: var(--color-white);
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 2.6rem;
+      line-height: 1.25;
+      color: var(--color-secondary-dark-2);
     }
+  }
+
+  &__platforms {
+    border-right: 1px solid var(--color-secondary-light-0);
   }
 }
