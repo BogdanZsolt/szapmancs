@@ -165,7 +165,6 @@
   &__social {
     grid-row: 4 / 5;
     justify-self: center;
-    transition: all 0.2s;
 
     &--link {
       text-decoration: none;
@@ -178,6 +177,7 @@
       padding: 1rem;
       border-radius: 25%;
       border: 2px solid var(--color-primary-dark-1);
+      transition: all 0.4s ease-in-out;
       cursor: pointer;
 
       &:hover {
