@@ -11,7 +11,12 @@ const sideBar = document.querySelector('.faq__navbar');
 const faqAccordionQuestion = document.querySelectorAll(
   '.faq__accordion--question'
 );
-// var faqNavLinks = document.querySelectorAll('.faq__nav--link');
+const heads = document.querySelectorAll('.head');
+const next = document.querySelector('#next');
+const prev = document.querySelector('#prev');
+const auto = true;
+const intervalTime = 5000;
+let changeInterval;
 
 // Sticky NavBar
 window.addEventListener('scroll', () => {
@@ -59,3 +64,55 @@ window.addEventListener('DOMContentLoaded', () => {
     observer.observe(section);
   });
 });
+
+const nextHead = () => {
+  // Get current class
+  const current = document.querySelector('.current');
+  // Remove current class
+  current.classList.remove('current');
+  // Check for next head
+  if (current.nextElementSibling) {
+    current.nextElementSibling.classList.add('current');
+  } else {
+    // Add current the first
+    heads[0].classList.add('current');
+  }
+  setTimeout(() => current.classList.remove('current'));
+};
+
+const prevHead = () => {
+  // Get current class
+  const current = document.querySelector('.current');
+  // Remove current class
+  current.classList.remove('current');
+  // Check for next head
+  if (current.previousElementSibling) {
+    current.previousElementSibling.classList.add('current');
+  } else {
+    // Add current the first
+    heads[heads.length - 1].classList.add('current');
+  }
+  setTimeout(() => current.classList.remove('current'));
+};
+
+next.addEventListener('click', (e) => {
+  nextHead();
+  if (auto) {
+    clearInterval(changeInterval);
+    chengeInterval = setInterval(nextHead, intervalTime);
+  }
+});
+
+prev.addEventListener('click', (e) => {
+  prevHead();
+  if (auto) {
+    clearInterval(changeInterval);
+    chengeInterval = setInterval(prevHead, intervalTime);
+  }
+});
+
+// Auto slide
+if (auto) {
+  // Run next slide at interval time
+  changeInterval = setInterval(nextHead, intervalTime);
+}
