@@ -151,12 +151,15 @@
     align-items: center;
     flex-wrap: wrap;
 
+    &--item {
+      font-size: 1.2rem;
+      font-family: var(--font-primary);
+      line-height: 1.8;
+    }
+
     &--link {
       text-decoration: none;
       color: var(--color-primary-dark-1);
-      font-family: var(--font-primary);
-      font-size: 1.2rem;
-      line-height: 1.8;
       text-align: center;
       padding: 0 1rem;
     }
@@ -185,4 +188,9 @@
       }
     }
   }
+}
+
+.serious {
+  font-weight: 700;
+  font-size: 1.4rem;
 }

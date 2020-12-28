@@ -478,21 +478,21 @@ h6 {
   .head.current {
     opacity: 1; }
   .head:first-child {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 10%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-1.jpg") no-repeat center center/cover; }
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 20%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-1.jpg") no-repeat center center/cover; }
   .head:nth-child(2) {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 10%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-2.jpg") no-repeat center top/cover; }
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 20%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-2.jpg") no-repeat center top/cover; }
   .head:nth-child(3) {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 10%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-3.jpg") no-repeat center top/cover; }
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 20%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-3.jpg") no-repeat center top/cover; }
   .head:nth-child(4) {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 10%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-4.jpg") no-repeat center top/cover; }
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 20%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-4.jpg") no-repeat center top/cover; }
   .head:nth-child(5) {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 10%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-5.jpg") no-repeat center top/cover; }
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 20%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-5.jpg") no-repeat center top/cover; }
   .head:nth-child(6) {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 10%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-6.jpg") no-repeat center top/cover; }
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 20%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-6.jpg") no-repeat center top/cover; }
   .head:nth-child(7) {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 10%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-7.jpg") no-repeat center top/cover; }
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 20%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-7.jpg") no-repeat center top/cover; }
   .head:nth-child(8) {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 10%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-8.jpg") no-repeat center top/cover; }
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 20%, rgba(248, 221, 226, 0.12) 75%, white 100%), url("../img/image-8.jpg") no-repeat center top/cover; }
 
 .navbar {
   grid-area: navbar;
@@ -1235,12 +1235,13 @@ h6 {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap; }
+    .footer__nav--item {
+      font-size: 1.2rem;
+      font-family: var(--font-primary);
+      line-height: 1.8; }
     .footer__nav--link {
       text-decoration: none;
       color: var(--color-primary-dark-1);
-      font-family: var(--font-primary);
-      font-size: 1.2rem;
-      line-height: 1.8;
       text-align: center;
       padding: 0 1rem; }
   .footer__social {
@@ -1260,6 +1261,10 @@ h6 {
       .footer__social--icon:hover {
         border: 2px solid var(--color-grey-light-3); }
 
+.serious {
+  font-weight: 700;
+  font-size: 1.4rem; }
+
 .ourstory {
   position: relative;
   display: grid;
@@ -1269,7 +1274,7 @@ h6 {
   .ourstory__header {
     grid-area: head;
     background-color: transparent;
-    background-image: linear-gradient(to bottom, rgba(214, 137, 151, 0.01) 0%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 25%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -1341,7 +1346,7 @@ h6 {
   .ourfounder__header {
     grid-area: head;
     background-color: transparent;
-    background-image: linear-gradient(to bottom, rgba(214, 137, 151, 0.01) 0%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 25%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -1413,7 +1418,7 @@ h6 {
   .ourvalues__header {
     grid-area: head;
     background-color: transparent;
-    background-image: linear-gradient(to bottom, rgba(214, 137, 151, 0.01) 0%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 25%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -1566,7 +1571,7 @@ h6 {
     flex-wrap: wrap; }
     .ourvalues__photo--img {
       width: 35rem;
-      margin: 2rem;
+      margin: 1rem;
       border-radius: 15px;
       box-shadow: 0 1rem 2rem var(--color-shadow); }
   .ourvalues__video {
@@ -1603,7 +1608,7 @@ https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/
   .faq__header {
     grid-area: head;
     background-color: transparent;
-    background-image: linear-gradient(to bottom, rgba(214, 137, 151, 0.01) 0%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 25%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -1767,7 +1772,7 @@ https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/
   .contact__header {
     grid-area: head;
     background-color: transparent;
-    background-image: linear-gradient(to bottom, rgba(214, 137, 151, 0.01) 0%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 25%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -1792,36 +1797,81 @@ https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/
     margin: 4rem 0;
     display: flex;
     justify-content: center; }
-  .contact__platforms, .contact__enqiries {
+    @media only screen and (max-width: 37.5em) {
+      .contact__content {
+        flex-direction: column; } }
+  .contact__platforms, .contact__message {
     background: var(--color-white);
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center; }
-    .contact__platforms h2, .contact__enqiries h2 {
+    .contact__platforms h2, .contact__message h2 {
       font-family: var(--font-display);
       font-weight: 400;
       font-size: 2.6rem;
       line-height: 1.25;
       margin-bottom: 4rem;
       color: var(--color-secondary-dark-2); }
-    .contact__platforms h3, .contact__enqiries h3 {
+    .contact__platforms h3, .contact__message h3 {
       font-family: var(--font-display);
       font-weight: 700;
       font-size: 1.3rem;
       line-height: 1.25;
       align-self: center;
       color: var(--color-secondary-dark-2); }
-    .contact__platforms p, .contact__enqiries p {
+    .contact__platforms p, .contact__message p {
       font-family: var(--font-display);
       font-weight: 400;
       font-size: 1.4rem;
       line-height: 1.8;
       color: var(--color-secondary-dark-2);
       margin-bottom: 2rem; }
-    .contact__platforms a, .contact__enqiries a {
+    .contact__platforms a, .contact__message a {
       text-decoration: none;
       color: var(--color-secondary-dark-2); }
+  .contact__form {
+    padding: 4rem;
+    width: 80%;
+    border: 2px solid var(--color-secondary-light-0); }
+    .contact__form .inputbox {
+      position: relative;
+      width: 100%;
+      margin-top: 1rem; }
+      .contact__form .inputbox input,
+      .contact__form .inputbox textarea {
+        width: 100%;
+        padding: 0.5rem 0;
+        margin: 1rem 0;
+        font-family: var(--font-primary);
+        font-size: 1.4rem;
+        color: var(--color-secondary-dark-2);
+        font-weight: 400;
+        border: 2px solid var(--color-secondary-light-0);
+        outline: none;
+        resize: vertical; }
+      .contact__form .inputbox input[type='submit'] {
+        width: 10rem;
+        background: var(--color-secondary-dark-2);
+        color: var(--color-secondary-light-0);
+        border: none;
+        cursor: pointer;
+        padding: 1rem;
+        font-size: 1.3rem;
+        font-weight: 500; }
+      .contact__form .inputbox span {
+        position: absolute;
+        left: 0;
+        top: -3rem;
+        padding: 0.5rem 0;
+        margin: 1rem 0;
+        font-family: var(--font-primary);
+        font-size: 1.4rem;
+        line-height: 1.5;
+        font-weight: 700;
+        color: var(--color-secondary-dark-2);
+        pointer-events: none;
+        transition: 0.5s; }
   .contact__platforms {
     border-right: 1px solid var(--color-secondary-light-0); }
   .contact__social {
