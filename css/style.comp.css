@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher&display=swap");
 @import url("../font/calibre/stylesheet.css");
 :root {
   --color-primary: #e4b192;
@@ -46,8 +47,8 @@
   --color-action: #f45404;
   /* Main Action color */
   --color-action-dark: #b74005;
-  --font-primary: 'Roboto', sans-serif;
-  --font-display: 'Playfair Display', serif;
+  --font-primary: 'Philosopher', sans-serif;
+  --font-display: 'Mountaines of Christmas';
   --font-handwrite: MarhabanRegural;
   --font-mobile: 'Calibre';
   --font-atomic: 'Atomic Age', cursive; }
@@ -86,6 +87,10 @@ body {
 @font-face {
   font-family: MarhabanRegural;
   src: url(../font/Marhaban-Regular.otf); }
+
+@font-face {
+  font-family: Mountaines of Christmas;
+  src: url(../font/MountainsofChristmas.ttf); }
 
 @keyframes animate-lotus {
   0% {
@@ -669,14 +674,21 @@ h6 {
   padding: 1rem 3rem;
   transition: all 0.3s ease-in-out; }
   .mega__title:hover, .mega__subtitle:hover, .mega__item:hover {
-    background: var(--color-primary-dark-2);
-    color: var(--color-white-1); }
+    background: orangered;
+    color: var(--color-white-1);
+    border-radius: 10px; }
 
 .mega__title {
   line-height: 1.5;
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 400; }
+  @media only screen and (max-width: 62.5em) {
+    .mega__title {
+      display: inline-block;
+      position: relative;
+      opacity: 1;
+      visibility: visible; } }
 
 .mega__subtitle {
   line-height: 1.5;
@@ -766,7 +778,7 @@ h6 {
       opacity: 0;
       transition: opacity 0.4s; }
     .cart__wrapper--name {
-      font-family: var(--font-primary);
+      font-family: var(--font-display);
       margin: 2rem;
       font-size: 1.3rem;
       font-weight: 600; }
@@ -819,7 +831,9 @@ h6 {
     flex-direction: column;
     padding: 2rem;
     align-content: center;
-    justify-content: center; }
+    justify-content: center;
+    background-image: url("../img/oldpaper-03.jpg");
+    background-size: cover; }
     @media only screen and (max-width: 62.5em) {
       .promo__text {
         padding: 2rem; } }
@@ -1692,7 +1706,8 @@ https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/
       font-weight: 400;
       line-height: 1.54;
       padding: 0.5rem 1rem;
-      border: 1px solid var(--color-secondary-dark-2); }
+      border-radius: 10px;
+      border: 1px dotted var(--color-secondary-dark-2); }
       .faq__sidebar li.active > a {
         color: var(--color-secondary-dark-2);
         background: var(--color-secondary-light-0);
@@ -1724,7 +1739,7 @@ https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/
       padding: 1.5rem 0;
       display: block;
       width: 100%;
-      border-bottom: 1px solid var(--color-secondary-light-2); }
+      border-bottom: 3px dashed var(--color-secondary-light-2); }
     .faq__accordion--question {
       font-size: 1.6rem;
       font-weight: 700;
