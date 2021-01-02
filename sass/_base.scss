@@ -49,8 +49,10 @@
   --color-action-dark: #b74005;
 
   // FONT VARIABLES
-  --font-primary: 'Roboto', sans-serif;
-  --font-display: 'Playfair Display', serif;
+  // --font-primary: 'Roboto', sans-serif;
+  --font-primary: 'Philosopher', sans-serif;
+  // --font-display: 'Playfair Display', serif;
+  --font-display: 'Mountaines of Christmas';
   --font-handwrite: MarhabanRegural;
   --font-mobile: 'Calibre';
   // --font-handwrite: 'Monsieur La Doulaise', cursive;
@@ -118,6 +120,11 @@ body {
 @font-face {
   font-family: MarhabanRegural;
   src: url(../font/Marhaban-Regular.otf);
+}
+
+@font-face {
+  font-family: Mountaines of Christmas;
+  src: url(../font/MountainsofChristmas.ttf);
 }
 
 @keyframes animate-lotus {
