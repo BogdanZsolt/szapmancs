@@ -11,10 +11,22 @@
 
   grid-template-areas:
     'head head head head head head head head head head head head'
-    ' .   osst osst osst osst osst osst osst osst osst osst   . '
+    ' .   osc1 osc1 osc1 osc1 osc1 osc1 osc1 osc1 osc1 osc1   . '
     ' .   ospt ospt ospt ospt ospt ospt ospt ospt ospt ospt   . '
-    ' .   osvd osvd osvd osvd osvd osvd osvd osvd osvd osvd   . '
+    ' .   osvc osvc osvc osvc osvc osc2 osc2 osc2 osc2 osc2   . '
     'foot foot foot foot foot foot foot foot foot foot foot foot';
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-rows: 50vh repeat(5, minmax(min-content, max-content));
+
+    grid-template-areas:
+      'head head head head head head head head head head head head'
+      ' .   osc1 osc1 osc1 osc1 osc1 osc1 osc1 osc1 osc1 osc1   . '
+      ' .   ospt ospt ospt ospt ospt ospt ospt ospt ospt ospt   . '
+      ' .   osvc osvc osvc osvc osvc osvc osvc osvc osvc osvc   . '
+      ' .   osc2 osc2 osc2 osc2 osc2 osc2 osc2 osc2 osc2 osc2   . '
+      'foot foot foot foot foot foot foot foot foot foot foot foot';
+  }
 
   &__header {
     grid-area: head;
@@ -56,8 +68,16 @@
 
   &__content {
     margin: 4rem 0 2rem;
-    grid-area: osst;
-    background: var(--color-primary-light-2);
+    background: transparent;
+
+    &--1 {
+      grid-area: osc1;
+    }
+
+    &--2 {
+      grid-area: osc2;
+      margin: 0 0 0 2rem;
+    }
 
     &--txt {
       font-family: var(--font-primary);
@@ -65,7 +85,9 @@
       font-weight: 400;
       line-height: 1.25;
       color: var(--color-primary-dark-2);
+      margin: 0 2rem 2rem 0rem;
       padding: 1rem;
+      text-align: justify;
     }
   }
 
@@ -78,23 +100,23 @@
     flex-wrap: wrap;
 
     &--img {
-      width: 35rem;
+      width: 25rem;
       margin: 2rem;
-      border-radius: 15px;
+      border-radius: 10px;
       box-shadow: 0 1rem 2rem var(--color-shadow);
     }
   }
 
   &__video {
-    grid-area: osvd;
-    margin-bottom: 4rem;
+    grid-area: osvc;
     position: relative;
     box-shadow: 0 1rem 2rem var(--color-shadow);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin: 0 2rem 4rem;
     overflow: hidden;
-    width: 100%;
+    max-width: 100%;
     padding-top: 56.25%;
 
     &--iframe {

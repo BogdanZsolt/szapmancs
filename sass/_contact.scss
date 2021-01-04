@@ -107,6 +107,7 @@
     padding: 4rem;
     width: 80%;
     border: 2px solid var(--color-secondary-light-0);
+    border-radius: 10px;
 
     & .inputbox {
       position: relative;
@@ -122,7 +123,8 @@
         font-size: 1.4rem;
         color: var(--color-secondary-dark-2);
         font-weight: 400;
-        border: 2px solid var(--color-secondary-light-0);
+        border: 2px dotted var(--color-secondary-light-0);
+        border-radius: 5px;
         outline: none;
         resize: vertical;
 

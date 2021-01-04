@@ -1,7 +1,7 @@
 .ourvalues {
   position: relative;
   display: grid;
-  grid-template-rows: 50vh repeat(4, minmax(min-content, max-content));
+  grid-template-rows: 50vh repeat(6, minmax(min-content, max-content));
   grid-template-columns:
     [ full-start] 1fr [center-start] repeat(
       10,
@@ -11,11 +11,26 @@
 
   grid-template-areas:
     'head head head head head head head head head head head head'
+    ' .   ovc1 ovc1 ovc1 ovc1 ovc1 ovc1 ovc1 ovc1 ovc1 ovc1   . '
     ' .   ovft ovft ovft ovft ovft ovft ovft ovft ovft ovft   . '
-    ' .   ovcn ovcn ovcn ovcn ovcn ovcn ovcn ovcn ovcn ovcn   . '
+    ' .   ovc2 ovc2 ovc2 ovc2 ovc2 ovc2 ovc2 ovc2 ovc2 ovc2   . '
     ' .   ovpt ovpt ovpt ovpt ovpt ovpt ovpt ovpt ovpt ovpt   . '
-    ' .   ovvd ovvd ovvd ovvd ovvd ovvd ovvd ovvd ovvd ovvd   . '
+    ' .   ovvd ovvd ovvd ovvd ovvd ovc3 ovc3 ovc3 ovc3 ovc3   . '
     'foot foot foot foot foot foot foot foot foot foot foot foot';
+
+  @media only screen and (max-width: $bp-large) {
+    grid-template-rows: 50vh repeat(7, minmax(min-content, max-content));
+
+    grid-template-areas:
+      'head head head head head head head head head head head head'
+      ' .   ovc1 ovc1 ovc1 ovc1 ovc1 ovc1 ovc1 ovc1 ovc1 ovc1   . '
+      ' .   ovft ovft ovft ovft ovft ovft ovft ovft ovft ovft   . '
+      ' .   ovc2 ovc2 ovc2 ovc2 ovc2 ovc2 ovc2 ovc2 ovc2 ovc2   . '
+      ' .   ovpt ovpt ovpt ovpt ovpt ovpt ovpt ovpt ovpt ovpt   . '
+      ' .   ovvd ovvd ovvd ovvd ovvd ovvd ovvd ovvd ovvd ovvd   . '
+      ' .   ovc3 ovc3 ovc3 ovc3 ovc3 ovc3 ovc3 ovc3 ovc3 ovc3   . '
+      'foot foot foot foot foot foot foot foot foot foot foot foot';
+  }
 
   &__header {
     grid-area: head;
@@ -206,12 +221,23 @@
   &__content {
     width: 100%;
     margin: 4rem 0 2rem;
-    grid-area: ovcn;
-    // background: var(--color-primary-light-2);
     background: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    &--1 {
+      grid-area: ovc1;
+    }
+
+    &--2 {
+      grid-area: ovc2;
+    }
+
+    &--3 {
+      grid-area: ovc3;
+      justify-content: flex-start;
+    }
 
     &--title {
       flex-wrap: wrap;
@@ -234,6 +260,10 @@
       padding: 1rem;
       text-align: justify;
     }
+
+    &--3 &--txt {
+      padding-left: 3rem;
+    }
   }
 
   &__photo {
@@ -254,14 +284,14 @@
 
   &__video {
     grid-area: ovvd;
-    margin-bottom: 4rem;
     position: relative;
     box-shadow: 0 1rem 2rem var(--color-shadow);
+    margin: 0 2rem 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    width: 100%;
+    max-width: 100%;
     padding-top: 56.25%;
 
     &--iframe {

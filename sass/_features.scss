@@ -1,10 +1,9 @@
 .features {
   grid-area: feat;
-  padding: 2rem;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 5rem;
+  gap: 3rem;
 }
 
 .feature__btn {
@@ -114,9 +113,9 @@
     grid-row: 2 / 3;
     display: inline-block;
     font-family: var(--font-primary);
-    font-size: 2rem;
-    line-height: normal;
-    font-weight: 600;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    font-weight: 500;
     color: var(--color-secondary-light-0);
     transition: all 0.4s;
   }

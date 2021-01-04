@@ -457,8 +457,10 @@
   }
 
   &__col:hover &__text {
-    background: var(--color-secondary-dark-2);
+    // background: var(--color-secondary-dark-2);
+    background: #791155;
     color: var(--color-white-1);
+    border-radius: 10px;
   }
 }
 
