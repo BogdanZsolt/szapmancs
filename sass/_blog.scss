@@ -1,0 +1,54 @@
+.blog {
+  position: relative;
+  display: grid;
+
+  grid-template-rows: 50vh repeat(2, minmax(min-content, max-content));
+  grid-template-columns:
+    [ full-start] 1fr [center-start] repeat(
+      10,
+      [col-start] minmax(min-content, 12rem) [col-end]
+    )
+    [center-end] 1fr [full-end];
+
+  grid-template-areas:
+    "head head head head head head head head head head head head"
+    "  .  cont cont cont cont cont cont cont cont cont cont  .  "
+    "foot foot foot foot foot foot foot foot foot foot foot foot";
+
+  &__header {
+    grid-area: head;
+    background: transparent;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(214, 137, 151, 0.01) 25%,
+        rgba(248, 221, 226, 0.12) 65%,
+        rgba(255, 2255, 255, 1) 100%
+      ),
+      url(https://picsum.photos/1920/540.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--title {
+      font-family: var(--font-display);
+      font-size: 5.6rem;
+      background: transparent;
+      color: var(--color-secondary-dark-2);
+      font-weight: 500;
+    }
+  }
+
+  &__footer {
+    grid-area: foot;
+    background-color: var(--color-secondary-light-1);
+    border-top: 2px solid var(--color-secondary-light-2);
+    padding: 4rem;
+
+    display: grid;
+    grid-auto-rows: auto;
+    justify-content: center;
+  }
+}

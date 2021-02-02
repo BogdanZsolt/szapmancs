@@ -1821,12 +1821,72 @@ https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/
         font-size: 1.6rem;
         font-weight: 400; }
 
-.contact {
+.forMe {
   position: relative;
   display: grid;
   grid-template-rows: 50vh repeat(3, minmax(min-content, max-content));
   grid-template-columns: [full-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content, 12rem) [col-end]) [center-end] 1fr [full-end];
-  grid-template-areas: 'head head head head head head head head head head head head' '  .  cont cont cont cont cont cont cont cont cont cont  .  ' 'foot foot foot foot foot foot foot foot foot foot foot foot'; }
+  grid-template-areas: "head head head head head head head head head head head head" "  .  test test test test test test test test test test  .  " "  .  pict pict pict pict pict pict pict pict pict pict  .  " "foot foot foot foot foot foot foot foot foot foot foot foot"; }
+  .forMe__header {
+    grid-area: head;
+    background: transparent;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 25%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .forMe__header--title {
+      font-family: var(--font-display);
+      font-size: 5.6rem;
+      background: transparent;
+      color: var(--color-secondary-dark-2);
+      font-weight: 500; }
+  .forMe__footer {
+    grid-area: foot;
+    background-color: var(--color-secondary-light-1);
+    border-top: 2px solid var(--color-secondary-light-2);
+    padding: 4rem;
+    display: grid;
+    grid-auto-rows: auto;
+    justify-content: center; }
+
+.blog {
+  position: relative;
+  display: grid;
+  grid-template-rows: 50vh repeat(2, minmax(min-content, max-content));
+  grid-template-columns: [full-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content, 12rem) [col-end]) [center-end] 1fr [full-end];
+  grid-template-areas: "head head head head head head head head head head head head" "  .  cont cont cont cont cont cont cont cont cont cont  .  " "foot foot foot foot foot foot foot foot foot foot foot foot"; }
+  .blog__header {
+    grid-area: head;
+    background: transparent;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.7) 0%, rgba(214, 137, 151, 0.01) 25%, rgba(248, 221, 226, 0.12) 65%, white 100%), url(https://picsum.photos/1920/540.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .blog__header--title {
+      font-family: var(--font-display);
+      font-size: 5.6rem;
+      background: transparent;
+      color: var(--color-secondary-dark-2);
+      font-weight: 500; }
+  .blog__footer {
+    grid-area: foot;
+    background-color: var(--color-secondary-light-1);
+    border-top: 2px solid var(--color-secondary-light-2);
+    padding: 4rem;
+    display: grid;
+    grid-auto-rows: auto;
+    justify-content: center; }
+
+.contact {
+  position: relative;
+  display: grid;
+  grid-template-rows: 50vh repeat(2, minmax(min-content, max-content));
+  grid-template-columns: [full-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content, 12rem) [col-end]) [center-end] 1fr [full-end];
+  grid-template-areas: "head head head head head head head head head head head head" "  .  cont cont cont cont cont cont cont cont cont cont  .  " "foot foot foot foot foot foot foot foot foot foot foot foot"; }
   .contact__header {
     grid-area: head;
     background-color: transparent;
@@ -1910,7 +1970,7 @@ https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/
         border-radius: 5px;
         outline: none;
         resize: vertical; }
-      .contact__form .inputbox input[type='submit'] {
+      .contact__form .inputbox input[type="submit"] {
         width: 10rem;
         background: var(--color-secondary-dark-2);
         color: var(--color-secondary-light-0);

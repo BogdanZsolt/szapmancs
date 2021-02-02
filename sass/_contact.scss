@@ -1,7 +1,7 @@
 .contact {
   position: relative;
   display: grid;
-  grid-template-rows: 50vh repeat(3, minmax(min-content, max-content));
+  grid-template-rows: 50vh repeat(2, minmax(min-content, max-content));
   grid-template-columns:
     [ full-start] 1fr [center-start] repeat(
       10,
@@ -10,9 +10,9 @@
     [center-end] 1fr [full-end];
 
   grid-template-areas:
-    'head head head head head head head head head head head head'
-    '  .  cont cont cont cont cont cont cont cont cont cont  .  '
-    'foot foot foot foot foot foot foot foot foot foot foot foot';
+    "head head head head head head head head head head head head"
+    "  .  cont cont cont cont cont cont cont cont cont cont  .  "
+    "foot foot foot foot foot foot foot foot foot foot foot foot";
 
   &__header {
     grid-area: head;
@@ -137,7 +137,7 @@
         // }
       }
 
-      & input[type='submit'] {
+      & input[type="submit"] {
         width: 10rem;
         background: var(--color-secondary-dark-2);
         color: var(--color-secondary-light-0);
